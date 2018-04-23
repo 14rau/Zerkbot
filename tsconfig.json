@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "moduleResolution": "node",
+		"module": "commonjs",
+        "target": "esnext",
+        "noImplicitAny" : true,
+		"noUnusedLocals": true,
+        "experimentalDecorators": true,
+        "allowJs": true,
+        "lib": [
+            "es2016"
+        ]
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "compileOnSave": true,
+}

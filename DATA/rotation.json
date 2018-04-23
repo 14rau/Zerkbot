@@ -1,0 +1,65 @@
+[{
+    "rotation" : {
+        "name": "Boss start Rotation",
+        "description": "On Boss start",
+        "rotation":[
+            "Dash (for movementspeed)",
+            "Fiery Rage (Overwrites possible Flurry of Blows I into II)",
+            "Bloodlust",
+            "Thunderstrike",
+            "Lethalstrike",
+            "Unleash",
+            "Brooch",
+            "Beer",
+            "Awakening"
+        ]
+    },
+    "commitedBy" : "",
+    "approved": {
+        "isApproved" : true,
+        "approvedBy" : ""
+    }
+},{
+    "rotation" : {
+        "name" : "Awakening Combos",
+        "description": "Awakening Combos",
+        "rotation":[
+            "Right",
+            "Left",
+            "x9",
+            "Spam Skill on 1 until 23th second of Awakening Buff",
+            "Skill on 2"
+        ]
+    },
+    "commitedBy" : "",
+    "approved": {
+        "isApproved" : true,
+        "approvedBy" : ""
+    }
+},{
+    "rotation" : {
+        "name" : "Default zerk Rotation",
+        "description": "On any part of the combo Lethal strike is on cooldown use Vampiric Blow on its place.\n• Lethal Strike > Vampiric blow damage any time and remember Fiery Rage passive of berserker highers your Lethal Strike's damage up to x2 when low on hp.\n• If Thunderstrike, Cyclone, Raze, on cdr all at same time and Lethal Strike isn't, use Lethal Strike.\n• Dodging away from boss: use Dash > Raze > Block really fast. If Flurry of Blows I was not triggered just press Dash and hope it does get triggered this time.\n• Using Fiery Rage depends on your party. At good parties you want to hold Fiery Rage for when boss is enranged. If boss remains unenraged for more than ~30 seconds I recommend using Fiery rage and not waiting on enrange.\n• The reason why I mention Block is to let you know what skills I cancel animation at. Rest I just do it raw. You had to cancel animation of more skills in the past (I think)",
+        "rotation":[
+            "Tunderstrike",
+            "Lethal Strike",
+            "Block",
+            "Overhelm",
+            "Raze",
+            "Flatten",
+            "Block",
+            "Thunderstrike",
+            "Lethal Strike",
+            "Block",
+            "Cyclone **as many times it resets**",
+            "Lethal Strike",
+            "Block",
+            "Repeat"
+        ]
+    },
+    "commitedBy" : "",
+    "approved": {
+        "isApproved" : true,
+        "approvedBy" : ""
+    }
+}]

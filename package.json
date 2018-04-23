@@ -1,0 +1,31 @@
+{
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "name": "zerk_bot",
+  "version": "1.0.0",
+  "description": "Botdescription",
+  "main": "./src/main/main.js",
+  "scripts": {
+    "build": "./node_modules/.bin/tsc",
+    "start": "node ./dist/main/main.js",
+    "watch": "./node_modules/.bin/tsc -w"
+  },
+  "author": "14rau",
+  "license": "ISC",
+  "dependencies": {
+    "@types/lodash": "^4.14.107",
+    "arpad": "^1.0.2",
+    "discord.js": "^11.2.1",
+    "express": "^4.16.3",
+    "fetch": "^1.1.0",
+    "lodash": "^4.17.5",
+    "random-js": "^1.0.8",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "@types/node": "^9.6.1",
+    "typescript": "^2.7.2"
+  }
+}
