@@ -6,6 +6,7 @@ declare module NodeJS {
       settings?: any;
       commands?: any;
       tricks?: any;
-      glyphpages?: any;
+      glyphpages?: any[];
+      rotations?: any[];
     }
   }

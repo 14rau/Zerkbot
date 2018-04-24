@@ -14,7 +14,7 @@ export class GlyphProvider {
      * @param position This is the position from the trick you want
      */
     public static getBuild(isAdmin : boolean, build? : string) : Partial<MessageEmbed> | string{
-       if(build) {
+       if(build && Number.parseInt(build) > 0 && Number.parseInt(build) < global.glyphpages.length) {
             return {
                 description: (global.glyphpages as IGlyphbuild[])[Number.parseInt(build)].description,
                 image: {

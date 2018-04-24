@@ -12,6 +12,38 @@ const mkdirSync = function (dirPath, cb) {
   }
 
 
+try{
+    let data = require("./../DATA/rotation.json");
+    console.log("./../DATA/rotation.json exists!");
+} catch (err) {
+    try{
+        fs.writeFileSync('./DATA/rotation.json', `[]`);
+    }catch(err){
+        console.log("Cannot write file",err);
+    }
+}
+try{
+    let data = require("./../DATA/tricks.json");
+    console.log("./../DATA/tricks.json exists!");
+} catch (err) {
+    try{
+        fs.writeFileSync('./DATA/tricks.json', `[]`);
+    }catch(err){
+        console.log("Cannot write file",err);
+    }
+}
+try{
+    let data = require("./../DATA/glyphpages.json");
+    console.log("./../DATA/glyphpages.json exists!");
+} catch (err) {
+    try{
+        fs.writeFileSync('./DATA/glyphpages.json', `[]`);
+    }catch(err){
+        console.log("Cannot write file",err);
+    }
+}
+
+
 mkdirSync("./ress", ()=>{
     try{
         let data = require("./../ress/auth.json");
@@ -35,7 +67,9 @@ mkdirSync("./ress", ()=>{
                 "Administrator: [YOUR DISCORDID]",
                 "log": "CHANNEL THAT IS BEEING USED FOR LOGGING!",
                 "command" : "z!",
-                "invite" : "https://discordapp.com/api/oauth2/authorize?client_id=437954875595161621&permissions=0&scope=bot"
+                "invite" : "https://discordapp.com/api/oauth2/authorize?client_id=437954875595161621&permissions=0&scope=bot",
+                "mainGuild" : "YOUR GUILD ID",
+                "editorRole" : "Editor"
             }`);
             console.log("Some more informations:")
             console.log("Administrators have full rights. The changes they commit, will be added instantly. Only Administrators can delete informations")

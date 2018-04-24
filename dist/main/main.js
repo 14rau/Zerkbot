@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 global.tricks = require("./../../DATA/tricks.json");
 global.glyphpages = require("./../../DATA/glyphpages.json");
+global.rotations = require("./../../DATA/rotation.json");
 if (!("settings" in global)) {
     global.settings = require("./../../ress/settings.json");
 }

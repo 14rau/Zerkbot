@@ -9,7 +9,7 @@ class GlyphProvider {
      * @param position This is the position from the trick you want
      */
     static getBuild(isAdmin, build) {
-        if (build) {
+        if (build && Number.parseInt(build) > 0 && Number.parseInt(build) < global.glyphpages.length) {
             return {
                 description: global.glyphpages[Number.parseInt(build)].description,
                 image: {
