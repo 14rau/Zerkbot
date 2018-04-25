@@ -106,7 +106,7 @@ var commands : IBotCommand[]= [{
         }
     },{
         name: "rmtrick",
-        description: "removed an trick\nSyntax: " + global.settings.command + "rmtrick type index",
+        description: "Remove a trick\nSyntax: " + global.settings.command + "rmtrick type index",
         showCmd: false,
         function: (args: string[], message : Message) => {
             if(isAdmin(message.author.id)) {

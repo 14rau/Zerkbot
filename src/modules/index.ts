@@ -40,7 +40,6 @@ export function returnCommandList(id : string) {
     let ret = {
         embed: {
             title: "Commandlist",
-            description: "Commandliste",
             fields: fields
         }
         

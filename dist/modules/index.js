@@ -38,7 +38,6 @@ function returnCommandList(id) {
     let ret = {
         embed: {
             title: "Commandlist",
-            description: "Commandliste",
             fields: fields
         }
     };

@@ -90,7 +90,7 @@ var commands = [{
         }
     }, {
         name: "rmtrick",
-        description: "removed an trick\nSyntax: " + global.settings.command + "rmtrick type index",
+        description: "Remove a trick\nSyntax: " + global.settings.command + "rmtrick type index",
         showCmd: false,
         function: (args, message) => {
             if (isAdmin(message.author.id)) {
