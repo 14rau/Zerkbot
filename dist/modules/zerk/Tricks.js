@@ -47,7 +47,7 @@ class TrickProvider {
                         : Number.isNaN(Number.parseInt(el.by)) ?
                             el.by : el.by + "(User is not known on any known server)"));
                     if (isAdmin) {
-                        name += ind + "";
+                        name += +" (" + ind + ")";
                     }
                     return {
                         name: name,
@@ -60,7 +60,7 @@ class TrickProvider {
             }
         }
         else {
-            return "Wich kind of global.tricks do you want? nonawakening or awakening?";
+            return "Wich kind of tricks do you want? nonawakening or awakening?";
         }
     }
     /**
