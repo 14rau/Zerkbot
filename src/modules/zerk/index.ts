@@ -200,7 +200,7 @@ var commands : IBotCommand[]= [{
     },{
         name: "rotation",
         description: "Displays an rotation\nSyntax: " + global.settings.command + "rotation index",
-        showCmd: false,
+        showCmd: true,
         function: (args: string[], message : Message) => {
             message.channel.send(RotationProvider.getRotation(true, args[0]))
         }
@@ -239,7 +239,7 @@ var commands : IBotCommand[]= [{
     },{
         name: "glyphs",
         description: "Returns an Glyphpage\nSyntax: " + global.settings.command + "glyphs index",
-        showCmd: false,
+        showCmd: true,
         function: (args: string[], message : Message) => {
             message.channel.send(GlyphProvider.getBuild(true, args[0]));
         }
@@ -262,7 +262,11 @@ var commands : IBotCommand[]= [{
 
 export function isAdmin(uid : string) : boolean {
     try {
-        return (global.client as Client).guilds.get(global.settings.mainGuild).members.get(uid).highestRole.name === global.settings.editorRole;
+        if((global.client as Client).guilds.get(global.settings.mainGuild).members.get(uid).roles.find("name", global.settings.editorRole)) {
+            return true;
+        } else {
+            return false;
+        }
     } catch (err) {
         console.log(err);
         return global.settings.Administrator.indexOf(uid) !== -1;

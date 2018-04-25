@@ -78,7 +78,7 @@ class TrickProvider {
             }
         });
         logwriter_1.Logwriter.writeLog("addTrick", "Trick was added and approved by an Administrator", "ADMINISTRATOR", false);
-        saver_1.DataSaver.saveJson("global.tricks.json", global.tricks);
+        saver_1.DataSaver.saveJson("tricks.json", global.tricks);
     }
     /**
      *
@@ -89,7 +89,7 @@ class TrickProvider {
         try {
             global.tricks[type].splice(Number.parseInt(index), 1);
             logwriter_1.Logwriter.writeLog("rmTrick", "Deleted trick with index " + index, commitBy, false);
-            saver_1.DataSaver.saveJson("global.tricks.json", global.tricks);
+            saver_1.DataSaver.saveJson("tricks.json", global.tricks);
         }
         catch (err) {
             logwriter_1.Logwriter.writeLog("rmTrick", "Tried to delete trick with index " + index + " but failed!", commitBy, false);

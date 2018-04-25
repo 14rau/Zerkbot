@@ -188,7 +188,7 @@ var commands = [{
     }, {
         name: "rotation",
         description: "Displays an rotation\nSyntax: " + global.settings.command + "rotation index",
-        showCmd: false,
+        showCmd: true,
         function: (args, message) => {
             message.channel.send(Rotation_1.RotationProvider.getRotation(true, args[0]));
         }
@@ -233,7 +233,7 @@ var commands = [{
     }, {
         name: "glyphs",
         description: "Returns an Glyphpage\nSyntax: " + global.settings.command + "glyphs index",
-        showCmd: false,
+        showCmd: true,
         function: (args, message) => {
             message.channel.send(Glyphs_1.GlyphProvider.getBuild(true, args[0]));
         }
@@ -256,7 +256,12 @@ var commands = [{
 //util functions
 function isAdmin(uid) {
     try {
-        return global.client.guilds.get(global.settings.mainGuild).members.get(uid).highestRole.name === global.settings.editorRole;
+        if (global.client.guilds.get(global.settings.mainGuild).members.get(uid).roles.find("name", global.settings.editorRole)) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
     catch (err) {
         console.log(err);
