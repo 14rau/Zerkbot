@@ -94,7 +94,9 @@ var commands = [{
         showCmd: false,
         function: (args, message) => {
             if (isAdmin(message.author.id)) {
-                Tricks_1.TrickProvider.rmTrick(args[0], message.author.id, args[1]);
+                if (args.length > 0) {
+                    Tricks_1.TrickProvider.rmTrick(args[0], message.author.id, args[1]);
+                }
             }
             else {
                 message.channel.send("Administrator needed. To get administrator rights you need to contact the Bothoster!");
@@ -109,24 +111,44 @@ var commands = [{
                 if (containsConversation(message.author.id)) {
                     switch (addrotationDialog[conversationAt(message.author.id)].state) {
                         case 1:
-                            editConversation(message.author.id, "name", args.join(" "));
-                            message.channel.send("Good, who commited this rotation? Use `" + global.settings.command + "addrotation Username or DiscordID`");
-                            editConversation(message.author.id, "state", 2);
+                            if (args.length > 0) {
+                                editConversation(message.author.id, "name", args.join(" "));
+                                message.channel.send("Good, who commited this rotation? Use `" + global.settings.command + "addrotation Username or DiscordID`");
+                                editConversation(message.author.id, "state", 2);
+                            }
+                            else {
+                                message.channel.send("No arguments given!");
+                            }
                             break;
                         case 2:
-                            editConversation(message.author.id, "commitedBy", args.join(" "));
-                            message.channel.send("Great. Lets get to the fun part! Use `" + global.settings.command + "addrotation Skillname > Skillname > Skillname(stuff) ...`");
-                            editConversation(message.author.id, "state", 3);
+                            if (args.length > 0) {
+                                editConversation(message.author.id, "commitedBy", args.join(" "));
+                                message.channel.send("Great. Lets get to the fun part! Use `" + global.settings.command + "addrotation Skillname > Skillname > Skillname(stuff) ...`");
+                                editConversation(message.author.id, "state", 3);
+                            }
+                            else {
+                                message.channel.send("No arguments where given!");
+                            }
                             break;
                         case 3:
-                            editConversation(message.author.id, "rotation", args.join(" ").split(">"));
-                            message.channel.send("Nearly finished. Now set the description of your rotation! Use `" + global.settings.command + "addrotation Your rotation description`");
-                            editConversation(message.author.id, "state", 4);
+                            if (args.length > 0) {
+                                editConversation(message.author.id, "rotation", args.join(" ").split(">"));
+                                message.channel.send("Nearly finished. Now set the description of your rotation! Use `" + global.settings.command + "addrotation Your rotation description`");
+                                editConversation(message.author.id, "state", 4);
+                            }
+                            else {
+                                message.channel.send("No arguments where given!");
+                            }
                             break;
                         case 4:
-                            editConversation(message.author.id, "description", args.join(" "));
-                            message.channel.send("And now. Are you sure, that you want to save this rotation? Use `" + global.settings.command + "addrotation save or cancel`");
-                            editConversation(message.author.id, "state", 5);
+                            if (args.length > 0) {
+                                editConversation(message.author.id, "description", args.join(" "));
+                                message.channel.send("And now. Are you sure, that you want to save this rotation? Use `" + global.settings.command + "addrotation save or cancel`");
+                                editConversation(message.author.id, "state", 5);
+                            }
+                            else {
+                                message.channel.send("No arguments where given!");
+                            }
                             break;
                         case 5:
                             if (args[0] === "save") {
@@ -179,7 +201,10 @@ var commands = [{
                 Rotation_1.RotationProvider.rmRotation(message.author.id, args[0]);
             }
             else {
-                message.channel.send("Administrator needed. To get administrator rights you need to contact the Bothoster!");
+                if (args.length)
+                    message.channel.send("Administrator needed. To get administrator rights you need to contact the Bothoster!");
+                else
+                    message.channel.send("No arguments where given!");
             }
         }
     }, {
@@ -188,7 +213,18 @@ var commands = [{
         showCmd: false,
         function: (args, message) => {
             if (isAdmin(message.author.id)) {
-                Glyphs_1.GlyphProvider.addBuild(message.attachments.first().url, args[0], args.splice(1, args.length - 1).join(" "));
+                console.log(args);
+                if (args.length === 0) {
+                    message.channel.send("No arguments where given!");
+                }
+                else {
+                    try {
+                        Glyphs_1.GlyphProvider.addBuild(message.attachments.first().url, args[0], args.splice(1, args.length - 1).join(" "));
+                    }
+                    catch (err) {
+                        message.channel.send("Error\n```js\n" + err.message + " ```");
+                    }
+                }
             }
             else {
                 message.channel.send("Administrator needed. To get administrator rights you need to contact the Bothoster!");
@@ -210,7 +246,10 @@ var commands = [{
                 Glyphs_1.GlyphProvider.rmGlyph(message.author.id, args[0]);
             }
             else {
-                message.channel.send("Administrator needed. To get administrator rights you need to contact the Bothoster!");
+                if (args.length > 0)
+                    message.channel.send("Administrator needed. To get administrator rights you need to contact the Bothoster!");
+                else
+                    message.channel.send("No arguments where given!");
             }
         }
     }];

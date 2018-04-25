@@ -13,7 +13,7 @@ export class RotationProvider {
      * @param position This is the position from the trick you want
      */
     public static getRotation(isAdmin : boolean, rotation? : string){
-        if(rotation && Number.parseInt(rotation) > 0 && Number.parseInt(rotation) < global.rotations.length) {
+        if(rotation && (Number.parseInt(rotation) >= 0) && (Number.parseInt(rotation) < global.rotations.length)) {
             let rota = global.rotations[Number.parseInt(rotation)];
             return {
                 embed:{

@@ -13,16 +13,14 @@ export class GlyphProvider {
      * @param type This is "awakening" or "nonawakening"
      * @param position This is the position from the trick you want
      */
-    public static getBuild(isAdmin : boolean, build? : string) : Partial<MessageEmbed> | string{
-       if(build && Number.parseInt(build) > 0 && Number.parseInt(build) < global.glyphpages.length) {
+    public static getBuild(isAdmin : boolean, build? : string){
+       if(build && (Number.parseInt(build) >= 0) && (Number.parseInt(build) < global.glyphpages.length)) {
             return {
-                description: (global.glyphpages as IGlyphbuild[])[Number.parseInt(build)].description,
-                image: {
-                    url: (global.glyphpages as IGlyphbuild[])[Number.parseInt(build)].url,
-                    embed: undefined,
-                    height: undefined,
-                    width: undefined,
-                    proxyURL: undefined
+                embed: {
+                    description: (global.glyphpages as IGlyphbuild[])[Number.parseInt(build)].description,
+                    image: {
+                        url: (global.glyphpages as IGlyphbuild[])[Number.parseInt(build)].url,
+                    }
                 }
             }
        } else {
@@ -40,6 +38,7 @@ export class GlyphProvider {
     public static addBuild(url : string, commitBy : string, description : string) {
         global.glyphpages.push({
             url: url,
+            description: description,
             commitedBy: commitBy,
             approved: {
                 isApproved: true,

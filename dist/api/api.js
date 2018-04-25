@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var v1 = require("./api/v1/api").v1;
 var express = require("express"), app = express();
-var port = 63536;
+var port = global.settings.apiPort;
 app.enable('trust proxy');
 app.listen(port);
 console.log("Zerkbot API is now online! ");

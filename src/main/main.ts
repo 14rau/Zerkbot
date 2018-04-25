@@ -38,7 +38,11 @@ if (cluster.isMaster) {
         global.msgListener = new MessageListener(client);
         //load commands
         onStart(client);
-        require("./../api/api.js");
+        if(global.settings.apiActive) {
+            require("./../api/api.js");
+        } else {
+            console.log("Api is not active!")
+        }
     });
     if(!("client" in global)) {
         global.client = client;

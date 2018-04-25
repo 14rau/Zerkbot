@@ -9,15 +9,13 @@ class GlyphProvider {
      * @param position This is the position from the trick you want
      */
     static getBuild(isAdmin, build) {
-        if (build && Number.parseInt(build) > 0 && Number.parseInt(build) < global.glyphpages.length) {
+        if (build && (Number.parseInt(build) >= 0) && (Number.parseInt(build) < global.glyphpages.length)) {
             return {
-                description: global.glyphpages[Number.parseInt(build)].description,
-                image: {
-                    url: global.glyphpages[Number.parseInt(build)].url,
-                    embed: undefined,
-                    height: undefined,
-                    width: undefined,
-                    proxyURL: undefined
+                embed: {
+                    description: global.glyphpages[Number.parseInt(build)].description,
+                    image: {
+                        url: global.glyphpages[Number.parseInt(build)].url,
+                    }
                 }
             };
         }
@@ -35,6 +33,7 @@ class GlyphProvider {
     static addBuild(url, commitBy, description) {
         global.glyphpages.push({
             url: url,
+            description: description,
             commitedBy: commitBy,
             approved: {
                 isApproved: true,

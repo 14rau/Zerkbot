@@ -73,7 +73,9 @@ mkdirSync("./ress", () => {
                 "command" : "z!",
                 "invite" : "https://discordapp.com/api/oauth2/authorize?client_id=437954875595161621&permissions=0&scope=bot",
                 "mainGuild" : "YOUR GUILD ID",
-                "editorRole" : "Editor"
+                "editorRole" : "Editor",
+                "apiActive" : false,
+                "apiPort" : 9090
             }`);
             console.log("Some more informations:");
             console.log("Administrators have full rights. The changes they commit, will be added instantly. Only Administrators can delete informations");
