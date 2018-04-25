@@ -47,7 +47,7 @@ class TrickProvider {
                         : Number.isNaN(Number.parseInt(el.by)) ?
                             el.by : el.by + "(User is not known on any known server)"));
                     if (isAdmin) {
-                        name += +" (" + ind + ")";
+                        name += +" (" + (ind).toString() + ")";
                     }
                     return {
                         name: name,
