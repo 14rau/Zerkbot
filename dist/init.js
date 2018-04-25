@@ -67,8 +67,8 @@ mkdirSync("./ress", () => {
     }
     catch (err) {
         try {
-            fs.writeFileSync('./ress/auth.json', `{
-                "Administrator: [YOUR DISCORDID]",
+            fs.writeFileSync('./ress/settings.json', `{
+                "Administrator": "[YOUR DISCORDID]",
                 "log": "CHANNEL THAT IS BEEING USED FOR LOGGING!",
                 "command" : "z!",
                 "invite" : "https://discordapp.com/api/oauth2/authorize?client_id=437954875595161621&permissions=0&scope=bot",
