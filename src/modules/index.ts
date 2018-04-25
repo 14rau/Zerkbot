@@ -7,7 +7,7 @@ export function onStart(client : Discord.Client){
     //add some util functions like invite link and info
     global.commands.push( {
         name: "invite",
-        description: "Get the bots intivelink",
+        description: "Gets the bot's intivelink",
         showCmd: true,
         function: (args: string[], message : Discord.Message) => {
             message.channel.send({

@@ -81,7 +81,7 @@ var commands = [{
         }
     }, {
         name: "addtrick",
-        description: "Addstrick admin only\nSyntax:\n" + global.settings.command + "addtrick awakening userthencommitedthetrick the trick",
+        description: "Adds trick admin only\nSyntax:\n" + global.settings.command + "addtrick awakening userthencommitedthetrick the trick",
         showCmd: false,
         function: (args, message) => {
             if ((args[0] === "awakening" || args[0] === "nonawakening") && isAdmin(message.author.id)) {
@@ -187,14 +187,14 @@ var commands = [{
         }
     }, {
         name: "rotation",
-        description: "Displays an rotation\nSyntax: " + global.settings.command + "rotation index",
+        description: "Displays a rotation\nSyntax: " + global.settings.command + "rotation index",
         showCmd: true,
         function: (args, message) => {
             message.channel.send(Rotation_1.RotationProvider.getRotation(true, args[0]));
         }
     }, {
         name: "rmrotation",
-        description: "Remove an rotation\nSyntax: " + global.settings.command + "rmrotation index",
+        description: "Remove a rotation\nSyntax: " + global.settings.command + "rmrotation index",
         showCmd: false,
         function: (args, message) => {
             if (isAdmin(message.author.id)) {
@@ -209,7 +209,7 @@ var commands = [{
         }
     }, {
         name: "addglyph",
-        description: "Add an Glyphpage\nSyntax: " + global.settings.command + "addglyphpage createdBy(Without space) Pagename\n You will also have to add the screenshot as an **attachment**",
+        description: "Add a Glyphpage\nSyntax: " + global.settings.command + "addglyphpage createdBy(Without space) Pagename\n You will also have to add the screenshot as an **attachment**",
         showCmd: false,
         function: (args, message) => {
             if (isAdmin(message.author.id)) {
@@ -232,14 +232,14 @@ var commands = [{
         }
     }, {
         name: "glyphs",
-        description: "Returns an Glyphpage\nSyntax: " + global.settings.command + "glyphs index",
+        description: "Returns a Glyphpage\nSyntax: " + global.settings.command + "glyphs index",
         showCmd: true,
         function: (args, message) => {
             message.channel.send(Glyphs_1.GlyphProvider.getBuild(true, args[0]));
         }
     }, {
         name: "rmglyph",
-        description: "Remove an glyphbuild\nSyntax: " + global.settings.command + "rmglyph index",
+        description: "Remove a glyphbuild\nSyntax: " + global.settings.command + "rmglyph index",
         showCmd: false,
         function: (args, message) => {
             if (isAdmin(message.author.id)) {

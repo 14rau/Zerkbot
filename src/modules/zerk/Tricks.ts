@@ -64,7 +64,7 @@ export class TrickProvider {
                     return returnStructure;
             }
         } else {
-            return "Wich kind of tricks do you want? nonawakening or awakening?";
+            return "Which kind of tricks do you want? nonawakening or awakening?";
         }
     }
 
