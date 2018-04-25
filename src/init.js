@@ -65,7 +65,7 @@ try{
     console.log("./../ress/settings.json exists!");
 } catch (err) {
     try{
-        fs.writeFileSync('./ress/auth.json', `{
+        fs.writeFileSync('./ress/settings.json', `{
             "Administrator: [YOUR DISCORDID]",
             "log": "CHANNEL THAT IS BEEING USED FOR LOGGING!",
             "command" : "z!",
