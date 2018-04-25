@@ -81,7 +81,7 @@ var commands = [{
         }
     }, {
         name: "addtrick",
-        description: "Adds trick admin only\nSyntax:\n" + global.settings.command + "addtrick awakening userthencommitedthetrick the trick",
+        description: "Addstrick admin only\nSyntax:\n" + global.settings.command + "addtrick awakening user-that-commited-the-trick the trick",
         showCmd: false,
         function: (args, message) => {
             if ((args[0] === "awakening" || args[0] === "nonawakening") && isAdmin(message.author.id)) {
