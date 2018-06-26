@@ -4,4 +4,5 @@
 
 Fill out the fields in the two .json files
 
-`npm start` to run the bot
+`npm start` to run the bot\
+Discord-Bot for Tera
